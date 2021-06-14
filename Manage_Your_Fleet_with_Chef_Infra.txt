@@ -1,0 +1,85 @@
+Exapand your Chef Infra language skills:
+++++++++++++++++++++++++++++++++++++++++
+    Learn more Infra commands:
+    =========================
+      First, you'll learn more about the chef generate command you used in the first section of this course.
+      Next, you'll learn about the chef run and chef-client commands, which allow you to execute Chef Infra code on the systems you're managing.
+      Finally, you'll learn about a tool called knife and the Chef Infra Server service within Chef Automate, which will allow you to eventually scale out your use of Chef Infra cookbooks to your entire infrastructure!
+
+      The chef generate command
+      -------------------------
+        Resources: are the statement of defined policy; in other words, they are the ingredients that make up whatever reciepe or set of policies you want to write or enforce.
+        Recipe: are the collection resources intended to accomplish a similar goal; ex: confgiure apache server.
+        Cookbooks: ae the collection of related reecipes.
+
+        The chef generate command gives you the ability to get started writing Chef Infra code without having to guess at what bits and pieces you'll need.
+
+        Command: chef generate repo learnchef-repo
+        Created directories:
+          - a cookbooks directory to store all of your cookbooks in
+          - a policyfiles directory to keep your overarching policies in place
+          - a data_bags directory to store any secrets and keys you might need to manage your environments
+
+      The knife command
+      -----------------
+        knife, a command-line tool that provides an interface between your local Chef Infra code and the Chef Infra Server that manages all the moving parts of your Chef ecosystem.
+
+        knife helps users manage:
+          - Nodes
+          - Cookbooks and recipes
+          - The application of Policies
+          - Resources within various cloud environments
+          - The installation of Chef Infra Client onto nodes
+          - Searching of indexed data on the Chef Infra Server
+
+        With knife, you can create distinct profiles that allow you to quickly and easily switch from interacting with one Infra Server to another Infra Server. With knife profiles, you can also switch between multiple organizations on the same Infra Server. Benefitial when you have large orgnaization/infrastructure spanning across many regions having multiple Chef Infra servers and need to switch between one infra server to another.
+
+        Commands:
+          knife bootstrap:
+          - allows you to initiate a process that installs Chef Infra Client on the target system and configures the Infra Client to be able to communicate with the Infra Server.
+          - it registers target system as a "node" on Infra server, allowing Infra Server to manage which and when policies are enforced.
+
+          knife node:
+          - Once your target system is bootstrapped, the knife node command allows you to update the policies on any one or more of your managed nodes.
+          - you can change, remove or add assigned policies, update the node's target environment, and view information about existing nodes.
+
+          knife ssh and knife winrm:
+          - allow you to connect via SSH or WinRM respectively and issue commands or investigate the system from your command line
+
+    Learn about Policyfiles:
+    ========================
+      - Describe how you want Chef Infra Client to build your system
+      - A policyfile declares the following for a node or group of nodes:
+        * name: Used to reference this policyfile on the Chef server and it must be unique
+        * run_list: chef-client will run these recipes in the order specified.
+        * sources: where we get cookbooks if they're not specifically declared in cookbook section below. This will usually be the public, or a private, supermarket, or Chef server
+        * attributes
+      - Policyfiles give you the confidence that the version of cookbook you specify will always be the one deployed
+
+      Wrapper Cookbook:
+      - a wrapper cookbook is just a regular cookbook that includes recipes from other cookbooks.
+      - hence creating an inherent dependency and essentially using the wrapped cookbook as a library.
+
+      Installing Policyfile:
+      ----------------------
+      We have defined within our policyfile what we'd like to run on a target machine. However, now we'd like to create snapshot containing the specific dependencies and specific versions that should be used. To do so we run the chef install policyfile command
+      - Running chef install reads the Policyfile.rb and creates a Policyfile.lock.json file. This Policyfile.lock.json file is the actual policy used by Chef Client and contains unique references to the cookbooks in the run_list
+      - The Policyfile.lock.json file consolidates all dependencies in the run_list. This file gets downloaded to your node and read by chef-client. The chef-client will then download the precise versions of all dependencies and run them locally.
+
+
+    Learn More about chef:
+    =====================
+      As you may know, knife is a command-line tool that provides an interface between a local chef-repo and the Chef Infra server.
+      - knife allows you to create multiple profiles using a credentials.rb file for working with multiple Chef Infra server and helpful for switching between envs
+      - You configure knife profiles by adding them to the ~/.chef/credentials file in your home directory on your workstation
+
+Manage your entire fleet with Chef Infra
+++++++++++++++++++++++++++++++++++++++++
+    Automate your Infra deployments:
+    ================================
+      Chef Habitat:
+        - allows you to take any application and wrap it up in a framework that allows it to be run anywhere - as an application, this also applies to Chef Infra.
+      # You will use Chef Policyfiles to determine the Chef Infra environment, and Habitat to deploy the Chef Infra Client & cookbooks.
+
+      Habitat Studio: The Studio is a clean room where you can create packages without the risk of any unnecessary packages getting included. Building artifacts.
+        => hab studio enter

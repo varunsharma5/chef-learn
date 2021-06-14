@@ -1,0 +1,237 @@
+                                              Beginning Your Chef Journey
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SSH: https://www.youtube.com/watch?v=v45p_kJV9i4
+Fundamentals:
++++++++++++++
+What is Chef:
+============
+what is chef chef as an automation platform that configures and manages your infrastructure whether it's on premise or in the cloud. So you can use it to speed up application deployment and even create continuous delivery pipeline. The key to power is that it turns infrastructure into code infrastructure is code means that your computing env has the same qualities as your application - its versionable, testing & repeatable.
+  DevOps:
+  =======
+  - to deploy better code, faster, in an automated manner
+
+  DevSecOps:
+  ++++++++++
+  - To allow for security practices to be integrated into the DevOps approach
+  - adds security-consciousness to your DevOps methodology
+  - Cookbook can be distributed the same way application code is run by the Ops team using tools like Chef Habitat, which can also package and deploy security profiles to enable auditing of the deployed systems and applications on a continuous basis.
+  - This kind of workflow promotes common tooling and processes across the Dev, Ops and Security teams, which enables the entire organization to unify around a common set of goals, practices, and methodologies
+
+Chef Open Source Software
++++++++++++++++++++++++++
+  What is Chef?
+  =============
+  - Chef (now called Chef Infra) which is a set of tools that automate the configuration of your cloud-based or on-prem server infrastructure.
+  - Chef can automate how you build, deploy, and manage your infrastructure.
+  - Chef can integrate with cloud-based platforms such as Microsoft Azure, Google Cloud, and Amazon Web Services (AWS) to automatically provision and configure those cloud-based computing resources.
+
+  Chef products/Offerings (fully open source):
+  ============================================
+    1. Chef Infra: automates how infrastructure is configured, deployed, and managed across your network.
+    2. Chef InSpec: to run compliance profiles and to create custom compliance profiles
+    3. Chef Habitat: Build continuous delivery pipelines, Create artifacts that can be deployed on-demand to bare-metal,Scale the adoption of agile delivery practices across development and operations
+    4. Chef Workstation
+    5. Chef Automate: An dashboard
+  - All Chef projects operate under governance determined by the Chef OSS Practices Committee
+
+  Chef Infra
+  ==========
+    - Infra as a Code
+    - supports cloud, on-premises, or in a hybrid environment
+    - automates how infrastructure is configured, deployed, and managed across your network.
+    - Chef Infra Client: which typically runs as an agent on the systems managed by Chef
+      * declares the desired state of your system using infrastructure-as-code
+      * ensures your system is inline with the declared policy.
+
+  Chef InSpec
+  ===========
+    - Chef InSpec is an open-source testing framework for infrastructure. It features a human and machine-readable language for specifying compliance, security and policy requirements.
+    - provides a language for describing security and compliance rules that can be shared between software engineers, operators, and security engineers.
+    - InSpec is a language used to declare security requirements, or tests, called "controls" that are packaged into groups called profiles. These profiles can be used to describe the requirements for all the environments that need to be audited on a regular basis, such as production systems running business-critical applications.
+
+  Chef Habitat
+  ============
+  - It is an open source automation solution for defining, packaging, and delivering applications to almost any environment regardless of operating system or platform.
+  - it ensures that an application that is built and run in development will be exactly the same as what's deployed in production environments.
+    * STEP 1: declaring the build and runtime instructions for the application in a Habitat Plan file
+    * STEP 2: application is then built in a cleanroom environment that bundles the application alongside its deployment instructions into a single deployable Habitat artifact file (.HART)
+    * STEP 3: This artifact is then deployed by the Habitat Supervisor, which monitors the application lifecycle, including deploying runtime configuration updates without having the rebuild the application
+
+  Chef Workstation
+  ================
+    - You can install Chef Workstation on your laptop/workstation to begin working with Chef software.
+    - bundles together all the common software needed when building automation instructions for tools like Chef Infra and Chef InSpec
+    - includes common debugging and testing tools for all your automation code
+
+    Chef Workstation includes:
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      - The Chef Workstation App
+      - Chef Infra Client: an agent that runs locally on every node that is under management by Chef Infra Server
+      - Chef InSpec: provides a language for describing security and compliance rules that can be shared between software engineers, operations, and security engineers.
+      - Chef Command Line Tool: allows you to apply dynamic, repeatable configurations to your servers directly over SSH or WinRM via chef-run
+      - Test Kitchen: test cookbooks across any combination of platforms and test suites before you deploy those cookbooks to your actual infrastructure nodes.
+      - Cookstyle: code linting tool
+
+  Chef Automate
+  =============
+    - enterprise visibility and metrics tool that provides actionable insights for any systems that you manage using Chef tools and products.
+    - The goal of Chef Automate is to make infrastructure management, application delivery and continuous compliance realities by enabling cross-team collaboration using a single source-of-truth
+Chef Product & Solutions:
+++++++++++++++++++++++++++
+  Chef Infrastructure Management
+  ==============================
+    - ensures configurations are applied consistently in every environment with infrastructure management automation.
+    - Built on Chef Infra and Chef Automate, Chef Infrastructure Management delivers automation across a wide range of cloud or on-premise infrastructure.
+
+  Chef App Delivery
+  =================
+    - Deliver successful application outcomes consistently at scale with Chef App Delivery.
+    - an automation solution that enables companies to apply a technology agnostic and modular approach to defining, packaging and delivering application and infrastructure across on-premise, hybrid and cloud environments
+    - Chef App Delivery combines the power of Chef Habitat and Chef Infra with Chef Automate to optimize how applications are defined, packaged, and delivered over their lifetimes.
+
+  Chef Compliance
+  ================
+    - Chef Compliance makes it easy to maintain and enforce compliance across the enterprise.
+    - These products comprise the Chef Compliance solution:
+        * Auditing with Chef InSpec
+        * Build Compliance Packages with Chef Habitat
+        * Monitor And Report With Chef Automate
+    - The Compliance product has two offerings:
+      * Chef Compliance Audit: builds its auditing capabilities on the open-source InSpec specification language, which is used to test and report on the state of your fleet
+      * Chef Compliance Remediation: is powered by the open-source Habitat tool, and features premium content used to bring systems into a compliant state. These premium Habitat packages can turn on remediation on a control-by-control basis, giving you the maximum amount of control over when and where security policies should be enforced.
+
+  Chef Desktop
+  ============
+    - Chef Desktop allows IT teams to automate the deployment, management, and ongoing compliance of IT resources.
+    - Chef Desktop services target the following basic functions:
+        * Hard drive encryption
+        * Screensaver with a password
+        * Password policy to set complexity and other elements
+        * Creating a rescue account or additional user accounts
+        * Application management to deploy and manage apps that you care about
+        * Update management to control where, when, and how OS and related patches are installed
+        * Desktop control to limit access to features or services
+
+  Chef Enterprise Automation Stack
+  ================================
+    - The Chef Enterprise Automation Stack (EAS) is our full suite of enterprise infrastructure, application and DevSecOps automation technologies for delivering change quickly, repeatedly, and securely.
+
+    The Enterprise Automate Stack is powered by Chef's core automation engines:
+      * Chef Infra
+      * Chef InSpec
+      * Chef Habitat
+      * Chef Automate
+##################################################################################################################
+                                        Manage Your Fleet with Chef Infra
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+chef generate cookbook learn_chef -> to create the minimum file structure neeeded to create a default testing instance
+
+kitchen.yml: Test Kitchen was built to use several different flexible settings, or keys
+
+chef-run. This is a utility to run adhoc Chef Infra commands on a remote server. It provides a good way to get started with Chef Infra, without requiring any infrastructure beyond SSH.
+
+- Chef Infra allows you to define your infrastructure policies as code and Chef Workstation gives you tools to start writing that code
+
+- Resources are a statement of defined policy; in other words, they're the ingredients that make up whatever recipe or set of policies you want to write or enforce.
+- Recipes are a collection resources intended to accomplish a similar goal; for example, to configure an Apache or IIS web server.
+- Cookbooks are a collection of related recipes; like a cookbook used in a real kitchen, they not only contain related recipes, but also which attributes can be manipulated, and information about how or why the recipes relate, when they were written and last updated, and who wrote or maintains them.
+- knife, a command-line tool that provides an interface between your local Chef Infra code and the Chef Infra Server that manages all the moving parts of your Chef ecosystem
+##################################################################################################################
+- Generating chef repo:
+    chef generate repo chef-workshop-solution
+
+MONGO_DB
+++++++++
+
+      - Generate Mongodb cookbook
+      - Generate template file for mongo db repo
+      - updated the receipe file to include the template content in the created file
+      - Linting:
+            Varuns-MacBook-Air:chef-workshop-solution varunsharma$ cookstyle cookbooks/mongodb
+            Inspecting 7 files
+            .......
+
+            7 files inspected, no offenses detected
+      - kitchen converge centos => to test using vagrant
+      - Testing:
+          * kitchen login centos
+            # sudo systemctl status mongod => true
+            # mongo => should open mongodb console
+      - kitchen verify
+      - kitchen destory centos
+
+
+      On AWS RHEL instance:
+        sudo chef-client --local-mode -r mongodb::install
+          Local mode is a way to run the Chef Infra Client against the chef-repo on a local machine as if it were running against the Chef Infra Server. Local mode relies on chef-zero, which acts as a very lightweight instance of the Chef Infra Server
+
+TOMCAT
+++++++
+      - chef generate cookbook tomcat
+
+##################################################################################################################
+POLICYFILES
++++++++++++
+- A Policyfile declares the following for a node or group of nodes:
+  * the name: A name that describes what the system you're building with Chef does
+  * run_list: chef-client will run these recipes in the order specified.
+  * sources,
+  * attributes for a node or group of nodes
+  Policyfiles also handle all dependency resolution for your cookbooks.
+
+- wrapper cookbook:
+##################################################################################################################
+CHEF ZERO:
+++++++++++
+Chef Zero is a simple, easy-install, in-memory Chef server that can be useful for Chef Client testing and chef-solo-like tasks that require a full Chef Server. It IS intended to be simple, Chef 11+ compliant, easy to run and fast to start.
+##################################################################################################################
+InSpec Lab: https://8000-0-7923cf95.learncheflabs.appsembler.com/
+##################################################################################################################
+TEST ENV USING VAGRANT
+++++++++++++++++++++++
+vagrant box add bento/centos-8 --provider=virtualbox => Downloads provided vm image/bento box
+  bento project is managed by chef. baseline machine
+vagrant init bento/centos-8 => creates Vagrantfile
+vim Vagrantfile
+vagrant up
+vagrant ssh
+  => install wget
+  => install git
+  => download package
+  => install package
+  => clone
+  => sudo chef-client -zr recipe[mongodb]
+##################################################################################################################
+IFaC
+++++
+Writing code for the managing configuration and automate provisioning in addition to deployment. using software development practice.
+
+provisioning code is now:
+  - versionable
+  - testable
+  - repeatable
+##################################################################################################################
+kitchen create => to create the virtual environment
+kitchen login centos => to ssh to created instance
+
+-------------------------
+INSIDE A REPO:
+a cookbooks directory to store all of your cookbooks in
+a policyfiles directory to keep your overarching policies in place
+a data_bags directory to store any secrets and keys you might need to manage your environments
+---------------------------
+A Policyfile declares the name, run_list, sources, and attributes for a node or group of nodes. Policyfiles also handle all dependency resolution for your cookbooks.
+##################################################################################################################
+Last min:
+========
+vagrant commands
+kitchen command
+##################################################################################################################
+Chef Downloads:
++++++++++++++++
+https://docs.chef.io/workstation/install_workstation/
+		Amazon linux: wget https://packages.chef.io/files/stable/chef-workstation/21.2.278/el/8/chef-workstation-21.2.278-1.el7.x86_64.rpm
+AMI Id: ami-096fda3c22c1c990a
+
+ChefDK for centos 7.2: https://packages.chef.io/files/stable/chefdk/4.13.3/el/7/chefdk-4.13.3-1.el7.x86_64.rpm
+################################################################
