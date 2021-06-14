@@ -1,6 +1,7 @@
 ---
 driver:
   name: dokken
+  privileged: true # allows systemd services to start
 
 provisioner:
   name: dokken
@@ -10,7 +11,7 @@ transport:
 
 verifier:
   name: inspec
-  
+
 
 platforms:
   # @see https://github.com/chef-cookbooks/testing_examples/blob/master/kitchen.dokken.yml

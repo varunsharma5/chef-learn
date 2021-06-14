@@ -4,17 +4,17 @@
 # found at https://docs.chef.io/inspec/resources/
 
 describe package('httpd') do
-  it { should be_installed }
+    it { should be_installed }
 end
 
 describe service('httpd') do
-  it { should be_running }
+    it { should be_running }
 end
 
 describe command('curl localhost') do
-  its('stdout') { should match /hello/ }
+    its('stdout') { should match /hello/ }
 end
 
 describe port(80) do
-  it { should be_listening }
+    it { should be_listening }
 end
