@@ -11,7 +11,7 @@ describe service('httpd') do
   it { should be_running }
 end
 
-describe command('curl locahost') do
+describe command('curl localhost') do
   its('stdout') { should match /hello/}
 end
 
