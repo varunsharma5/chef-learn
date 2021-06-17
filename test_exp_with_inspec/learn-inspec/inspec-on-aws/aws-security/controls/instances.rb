@@ -1,4 +1,14 @@
-describe aws_ec2_instance(name: 'webserver') do
+webserver_id = attribute('ec2_instance_webserver', description: 'Web server ID')
+webserver_image_id = attribute('ec2_instance_webserver_ami', description: 'Ubuntu 16.04 AMI ID')
+databseserver_image_id = attribute('ec2_instance_database_ami', description: 'Ubuntu 16.04 AMI ID')
+vpc_id = attribute('vpc_id', description: 'VPC ID')
+private_subnet_id = attribute('subnet_private_id', description: 'Subnet ID')
+public_subnet_id = attribute('subnet_public_id', description: 'Subnet ID')
+security_group_ssh_id = attribute('security_group_ssh_id', description: 'Security group ID for SSH')
+security_group_web_id = attribute('security_group_web_id', description: 'Security group ID for HTTP')
+security_group_mysql_id = attribute('security_group_mysql_id', description: 'Security group ID for HTTP')
+
+describe aws_ec2_instance(webserver_id) do
   it { should be_running }
   its('image_id') { should eq 'ami-0ee02acd56a52998e' }
   its('instance_type') { should eq 't2.micro' }
