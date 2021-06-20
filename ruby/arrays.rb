@@ -6,7 +6,7 @@ months << "August"
 puts "-------------------------"
 puts months
 
-months.push ("September")
+months.push('September')
 
 puts "-------------------------"
 puts months
